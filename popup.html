@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>uKnob</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="row top">
+      <h1 style="text-align:center;margin:0">uKnob</h1>
+    </div>
+
+    <div id="main-controls">
+      <div class="group" style="display:flex; align-items:center; justify-content:center;">
+        <button id="minusBtn">-</button>
+        <div style="position:relative; display:inline-block;">
+          <img id="controlKnob" class="knob" src="icons/icon48.png" alt="Knob" />
+          <div id="knobValue" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:#888; font-size:14px; font-weight:bold; text-align:center;">0%</div>
+        </div>
+        <button id="plusBtn">+</button>
+      </div>
+
+      <div class="group" style="text-align:center;">
+        <input id="volumeSlider" type="range" min="0" max="100" step="5" value="50" />
+        <datalist id="ticks"></datalist>
+        <div id="tickMarks" class="tick-marks" aria-hidden="true"></div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px;">
+        <button id="toggleOverlay" style="background:#555;color:#fff;border:none;padding:4px 12px;border-radius:4px;">Pop Out</button>
+      </div>
+    </div>
+
+    <div id="overlay-active-view" style="display:none; text-align:center; padding-top: 80px;">
+      <p>Controls are on the page.</p>
+      <button id="returnToExtension" style="background:#555;color:#fff;border:none;padding:8px 16px;border-radius:4px;">Return to Extension</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
